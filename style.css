@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Palanquin', sans-serif;
+  background: #EFF1FF;
+}
+
+header {
+  background: #8E9AAF;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4rem;
+  color: #ffffff;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+h1,
+span {
+  font-family: 'Staatliches', cursive;
+  font-weight: 400;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+}
+
+
+#logo {
+  padding: 3.2rem;
+}
+
+#logo-02 {
+  display: none;
+}
+
+.title {
+  background: #CBC0D3;
+  height: 49px;
+  width: 100%;
+  padding: 0.8rem ;
+  text-align: center;
+  margin-bottom: 2.9rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.8rem 3.2rem 6rem;
+}
+
+.text{
+  font-family: 'Palanquin', sans-serif;
+  text-align: center;
+  width: 31.5rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #23053A;
+}
+
+.intro-desktop {
+  display: none;
+}
+
+.cards {
+  display: grid;
+  gap: 3.2rem;
+  margin-top: 5rem;
+}
+
+.cards .card {
+  position: relative;
+  /* width: 32rem; */
+  height: fit-content;
+}
+
+.cards .card:nth-child(3) {
+  display: none;
+}
+
+.cards .card:nth-child(4) {
+  display: none;
+}
+
+.cards .card span {
+  font-size: 2rem;
+  color: #4A4E69;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  background: #FEEAFA;
+  border-radius: 2rem;
+  width: 11.2rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  
+  animation: topdown 700ms 100ms backwards;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 2rem;
+  transition: all 200ms;
+  animation: downtop 700ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+
+.end-of-page {
+  display: none;
+}
+
+
+@media(min-width:900px) {
+  .container {
+    display: flex;
+  }
+
+  main {
+    margin: auto;
+  }
+
+  header {
+    width: 37.7rem;
+    height: 100vh;
+    position: fixed;
+    flex-direction: column;
+  }
+
+  #logo-02 {
+    display: block;
+    padding: 3.2rem;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  .title {
+    height: 7rem;
+    padding-top: 21px;
+    margin-bottom: 3.2rem;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .intro-desktop {
+    display: block;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    text-align: center;
+    width: 28rem;
+  }
+
+  .cards .card:nth-child(3) {
+    display: block;
+  }
+  
+  .cards .card:nth-child(4) {
+    display: block;
+  }
+
+  .cards .card span {
+    display: none;
+  }
+
+  .cards {
+    margin-left: 37.7rem;
+    grid-template-areas: 
+    'A B'
+    'C B'
+    'C D'
+    'E F';
+  }
+
+  .cards .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards .card:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards .card:nth-child(3) {
+    grid-area: D;
+  }
+
+  .cards .card:nth-child(4) {
+    grid-area: C;
+  }
+
+  .cards .card:nth-child(5) {
+    grid-area: E;
+  }
+
+  .cards .card:nth-child(6) {
+    grid-area: F;
+  }
+}
+
+@media(min-width:1440px) {
+  .cards {
+    grid-template-areas: 
+    'A B C'
+    'D B E'
+    'D F E';
+  }
+
+  .cards .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards .card:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards .card:nth-child(3) {
+    grid-area: C;
+  }
+
+  .cards .card:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards .card:nth-child(5) {
+    grid-area: F;
+  }
+
+  .cards .card:nth-child(6) {
+    grid-area: E;
+  }
+
+  .end-of-page {
+    display: block;
+    width: 54.4rem;
+    margin: 5rem 0 0 37.7rem;
+  }
+
+  .end-of-page footer {
+    color: #4A4E69;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.8rem; 
+    text-align: center;
+  }
+  
+  .end-of-page footer a {
+    text-decoration: none;
+    color: #4A4E69;
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-35px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
